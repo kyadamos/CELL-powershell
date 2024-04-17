@@ -1,0 +1,31 @@
+PowerShell CELL
+
+I. Setup
+
+	A. Download & Installation
+
+	B. Environment
+
+II. Introduction
+
+	A. Cmdlets
+
+	B. Data Types
+
+		i. Strings, Integers, Booleans
+
+		ii. Arrays, Objects
+
+	C. 
+
+III. Control Flow
+
+	A. If
+
+	B. For, While
+
+	C. Break, Continue, Return
+
+IV. Functions
+
+V. Script Modules
