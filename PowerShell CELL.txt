@@ -1,4 +1,5 @@
 PowerShell CELL
+* Create & upload a .zip file that includes folders set up for each iteration
 
 I. Setup
 
@@ -8,15 +9,20 @@ I. Setup
 
 II. Introduction
 
-	A. Cmdlets
-
-	B. Data Types
+	A. Data Types
 
 		i. Strings, Integers, Booleans
 
 		ii. Arrays, Objects
 
-	C. 
+	B. Cmdlets
+
+		i. Simple Cmdlet
+		
+		ii. Cmdlets with Parameters
+
+		iii. Pipeline
+
 
 III. Control Flow
 
@@ -27,5 +33,7 @@ III. Control Flow
 	C. Break, Continue, Return
 
 IV. Functions
+
+	A. Custom Functions
 
 V. Script Modules
