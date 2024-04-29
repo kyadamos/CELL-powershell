@@ -10,7 +10,11 @@ I. Setup
 II. Introduction
 
 	A. Data Types
-
+		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
+		0. Object
+		- Everything in PowerShell is, at their roots, an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object).
+		- Let's look at an object. In the console pane of the ISE, run this line `Get-ChildItem`. This command gets the contents of your working directory (unless you changed it, your user folder) and outputs it to your console; you should see the files and folders that are in your user folder, along with metadata of each item, such as LastWriteTime or Length (i.e. size, in bytes).
+			- We can capture the output of the command by surrounding it in parentheses, like this `(Get-ChildItem)` -- this is now an object that we can interact with, meaning we can get its properties and use methods on it. To access its properties or call its methods, we use a dot after the object and the name of the property or method that we'd like to use. Let's run `(Get-ChildItem).gettype()`, which calls the `GetType()` method of the object.
 		i. Strings, Integers, Booleans
 
 		ii. Arrays, Objects
