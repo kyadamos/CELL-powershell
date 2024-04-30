@@ -13,7 +13,7 @@ I. Setup
 		- We will use PowerShell ISE as our development environment in this course, but you can use any editor (e.g. Visual Studio Code) that you prefer. You can even develop your scripts in Notepad/Notepad++ if you'd like.
 		- Let us start by familiarizing ourself with the PowerShell ISE.
 			- Console
-				- The console pane contains an instance of PowerShell, most likely running the latest supported version of PowerShell on your machine (5.1). Here, you can run commands and see your output.
+				- The console pane contains an instance of PowerShell, most likely running the latest supported version of PowerShell on your machine (5.1). Here, you can enter commands on the command-line and run them by pressing enter; any output will be displayed directly under your input, and then a new command-line will appear underneath to receive your next input.
 				- You will probably see something like "PowerShell PS C:\Users\<your-attuid>>" on the left-hand side of the console, indicating that your current working directory is currently in your user folder.
 				- Another feature provided by the ISE is called Intellisense (Hotkey Ctrl+Space). Intellisense is a helpful tool that suggests commands and displays command information; for example, if you type "Get-" into the console and then press Ctrl+Space, you should see Intellisense's context window. You can use the arrow keys to navigate up and down the list to view different commands, and if you hover over a command, another popup should appear displaying the command parameters (which we will discuss in more detail in the next section).
 			- Script Pane
@@ -24,14 +24,24 @@ I. Setup
 II. Introduction
 
 	A. Data Types
-		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
-		0. Object
-		- Everything in PowerShell is, at their roots, an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object).
-		- Let's look at an object. In the console pane of the ISE, run this line `Get-ChildItem`. This command gets the contents of your working directory (unless you changed it, your user folder) and outputs it to your console; you should see the files and folders that are in your user folder, along with metadata of each item, such as LastWriteTime or Length (i.e. size, in bytes).
-			- We can capture the output of the command by surrounding it in parentheses, like this `(Get-ChildItem)` -- this is now an object that we can interact with, meaning we can get its properties and use methods on it. To access its properties or call its methods, we use a dot after the object and the name of the property or method that we'd like to use. Let's run `(Get-ChildItem).gettype()`, which calls the `GetType()` method of the object.
-		i. Strings, Integers, Booleans
 
-		ii. Arrays, Objects
+		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
+
+		0. Object
+		- Almost everything in PowerShell is, at their roots, an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object).
+		- Let's look at an object. To do this, we will use a command to get the contents of our working directory (the path displayed in the console), and we will assign the output to a variable.
+			- `Get-ChildItem` is a cmdlet (more on cmdlets in the next section) that gets the contents of your working directory and outputs it to your console.
+			- In PowerShell, variables are prefixed with a dollar sign $. Ex: `$some_variable`, `$input`, `$Folder5`
+			- In the console, let's create a variable called myFolder and assign it to the output of the Get-ChildItem cmdlet. Run the following line in the console: `$myFolder = Get-ChildItem`. When assigning a variable, the console will not display any output -- we can access the output of an assigned variable by inputting the variable through the command-line. Enter `$myFolder` into the console; we should see the files and folders that are in your working directory, which should be your user folder by default, along with some metadata, such as LastWriteTime or Length (i.e. size, in bytes).
+			- As mentioned before, $myFolder is now an object that we can interact with, meaning we can get its properties and use methods on it. To access its properties or call (use) its methods, we use a dot after the object followed by the name of the property or method that we'd like to use. Let's run `$myFolder.gettype()` in the console, which calls the `GetType()` method of the object. The output tells us that our variable's type is Object[].
+				- Note the parentheses after `.GetType()`. This is how methods are written in PowerShell; properties do not have parentheses.
+		
+		i. Strings, Integers, Double, Booleans
+			- The following data types are very commonly used:
+
+			a. Strings: The string data type is essentially just text. We can create strings with either single or double quotes ' or ".
+
+		ii. Arrays, Hashtables
 
 	B. Cmdlets
 		- Cmdlets are commands that can be sent to PowerShell to execute. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find a standard list of commands that comes with PowerShell here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
