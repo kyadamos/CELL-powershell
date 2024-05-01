@@ -11,7 +11,7 @@ I. Setup
 	B. Environment
 	- Windows PowerShell Integrated Scripting Environment (ISE) is basically a PowerShell terminal combined with a text editor like Notepad to allow for quick creating, editing, testing, and debugging of PowerShell scripts. It also comes with debugging tools and hotkeys to facilitate the creation process.
 		- We will use PowerShell ISE as our development environment in this course, but you can use any editor (e.g. Visual Studio Code) that you prefer. You can even develop your scripts in Notepad/Notepad++ if you'd like.
-		- Let us start by familiarizing ourself with the PowerShell ISE.
+		- Let us begin by familiarizing ourselves with the PowerShell ISE.
 			- Console
 				- The console pane contains an instance of PowerShell, most likely running the latest supported version of PowerShell on your machine (5.1). Here, you can enter commands on the command-line and run them by pressing enter; any output will be displayed directly under your input, and then a new command-line will appear underneath to receive your next input.
 				- You will probably see something like "PowerShell PS C:\Users\<your-attuid>>" on the left-hand side of the console, indicating that your current working directory is currently in your user folder.
@@ -20,6 +20,8 @@ I. Setup
 				- This pane is essentially a text editor. We can write scripts and also use the ISE's debugging tools here.
 			- Commands Add-On
 				- This pane shows us all the commands available to the instance of PowerShell running in the ISE. If we were to add any additional commands through modules (which we will discuss later in iteration 5), then the module and its commands would appear here.
+		
+			
 
 II. Introduction
 
