@@ -6,7 +6,6 @@ PowerShell CELL
 		(b) A computer will complete the task more accurately (and faster) than the people previously assigned to the task, assuming the script is written correctly and well.
 	Here is a real example from my personal experience where I found scripting to be a highly appropriate solution: During the last week of each month, my team would have to download an average of ~360 spreadsheets of wirecenter data, each usually containing at least 100,000 rows. We had to format each spreadsheet to follow our template (add 5 columns & their headers, apply conditional formatting to a column, color the left and right halves of the table, etc.), rename the file to follow our naming convention, create a folder using the wirecenter's CLLI, and then move the spreadsheet into the folder. This task was split up between the 9 of us to complete throughout the week and consuming between 3-6 work hours for each person (27 hrs/month at best, 54 hrs/month at worst). The script I wrote to perform this task only required us to download the wirecenter Excel files, and from there it only took 2-4 hours to complete the rest of the task.
 
-
 I. Setup
 
 	A. Download & Installation
@@ -45,27 +44,45 @@ I. Setup
 
 II. Introduction
 
-	A. Data Types
+	A. Variables
+	- In PowerShell, variables are prefixed with a dollar sign $.
+		- Ex: `$some_variable`, `$input`, `$Folder5`
+	- Creating a variable and assigning a value to it is very simple:
+		- Ex: `$Number1 = 1`, `$Company = "ATT"`
+	- Each time that we start a new PowerShell session, PowerShell will automatically create and update a set of variables to store information about the session; these are called Automatic Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4). It's important to know about Automatic Variables because we should refrain from changing these values ourselves -- however, accessing these variables and their values and using them in our scripts is perfectly fine.
+		- Let's take a look at the variables in our session by entering the cmdlet `Get-Variable` into our console. Our output should have two columns: the variable names on the left, and their respective values on the right. Pick a few variables and access their values individually by inputting the variable into the console.
+			- Ex: `$HOME`, `$PWD` ("print working directory"), `$PSVersionTable`
+	
+	B. Data Types
 
 		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
 
 		0. Object
-		- Almost everything in PowerShell is, at their roots, an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object).
-		- Let's look at an object. To do this, we will use a command to get the contents of our working directory (the path displayed in the console), and we will assign the output to a variable.
-			- `Get-ChildItem` is a cmdlet (more on cmdlets in the next section) that gets the contents of your working directory and outputs it to your console.
-			- In PowerShell, variables are prefixed with a dollar sign $. Ex: `$some_variable`, `$input`, `$Folder5`
-			- In the console, let's create a variable called myFolder and assign it to the output of the Get-ChildItem cmdlet. Run the following line in the console: `$myFolder = Get-ChildItem`. When assigning a variable, the console will not display any output -- we can access the output of an assigned variable by inputting the variable through the command-line. Enter `$myFolder` into the console; we should see the files and folders that are in your working directory, which should be your user folder by default, along with some metadata, such as LastWriteTime or Length (i.e. size, in bytes).
+		- Almost everything in PowerShell is an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object). Many commands actually produce objects as their output.
+		- Let's look at an object. To do this, we will use a command that produces object-based output and assign it to a variable. In the console, enter `$myFolder = Get-ChildItem`.
+			- `Get-ChildItem` is a cmdlet (more on cmdlets in the next section) that gets the contents of a specified folder (the current working directory if path is unspecified) and outputs it to the console.
+			- Enter `$myFolder` into the console; we should see the files and folders that are in your working directory, which should be your user folder by default, along with some metadata, such as LastWriteTime or Length (i.e. size, in bytes).
 			- As mentioned before, $myFolder is now an object that we can interact with, meaning we can get its properties and use methods on it. To access its properties or call (use) its methods, we use a dot after the object followed by the name of the property or method that we'd like to use. Let's run `$myFolder.gettype()` in the console, which calls the `GetType()` method of the object. The output tells us that our variable's type is Object[].
 				- Note the parentheses after `.GetType()`. This is how methods are written in PowerShell; properties do not have parentheses.
 		
-		i. Strings, Integers, Double, Booleans
+		i. Booleans, Integers, Doubles, Strings
 			- The following data types are very commonly used:
 
-			a. Strings: The string data type is essentially just text. We can create strings with either single or double quotes ' or ".
+				a. Boolean: 
+					
+				b. Integers: 
+
+				c. Double: 
+
+				d. Strings: The string data type is essentially just text. We can create strings with either single or double quotes (' or "). Create a variable called `myString` and assign it to a string value:
+					Ex: $myString = "some text"
+					To verify that our variable `$myString` is of type [String], let's enter `$myString.GetType()` in our console.
+					
+					What if we have ; to do so, 
 
 		ii. Arrays, Hashtables
 
-	B. Cmdlets
+	C. Cmdlets
 		- Cmdlets are commands that can be sent to PowerShell to execute. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find a standard list of commands that comes with PowerShell here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
 		- We can try entering a command now in the console pane. Try typing Get-ChildItem and pressing enter. Your output should be the contents of your user folder.
 		- Cmdlets typically have parameters that you can execute them with in order to customize your command. Let's try passing some parameters into the Get-ChildItem command. Type Get-ChildItem (or press the up arrow to copy the last command entered), and then press Ctrl+Space. After a couple seconds, you should see a context window appear with the parameters that Get-ChildItem accepts.
