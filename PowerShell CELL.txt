@@ -29,7 +29,7 @@ I. Setup
 		- Scripting language: A scripting language is a class of programming languages; they are typically used to modify and/or automate tasks on a system.
 			- PowerShell scripts are essentially a set of commands written in a text file and saved with a ".ps1" extension.
 	- For the first couple of iterations, it will be very helpful to have a PowerShell terminal open on the side. This way, you can run the commands from the exercises and experiment with different inputs. For later iterations, we will also need to use a text editor, like Notepad or Notepad++, to create and edit our scripts.
-		- The program that we will use in this course is Windows PowerShell ISE (Integrated Scripting Environment), and we recommend that you do, too. Windows PowerShell ISE is simply a PowerShell terminal docked next to a text editor to allow for quick creating, editing, testing, and debugging of PowerShell scripts. It also comes with debugging tools and keyboard shortcuts to facilitate the scripting process. Finally, because it is made specifically for PowerShell, the interface is much simpler than other IDEs (Integrated Development Environment) and will let us focus on learning PowerShell.
+		- We will be using Windows PowerShell ISE (Integrated Scripting Environment) in this course, and we recommend that you do, too. Windows PowerShell ISE is simply a PowerShell terminal docked next to a text editor to allow for quick creating, editing, testing, and debugging of PowerShell scripts. It also comes with debugging tools and keyboard shortcuts to facilitate the scripting process. Finally, because it is made specifically for PowerShell, the interface is much simpler than other IDEs (Integrated Development Environment) and will let us focus on learning PowerShell.
 		- If you would like to use a different editor for any reason, that is completely okay (next best recommendation is Visual Studio Code). You can even write and edit your scripts in Notepad/Notepad++ and run them using a regular PowerShell terminal.
 		- Let us begin by familiarizing ourselves with the PowerShell ISE.
 			- Console
@@ -41,6 +41,19 @@ I. Setup
 				- This pane is essentially a text editor. We can write scripts and also use the ISE's debugging tools here.
 			- Commands Add-On
 				- This pane shows us all the commands available to the instance of PowerShell running in the ISE. If we were to add any additional commands through modules (which we will discuss later in iteration 5), then the module and its commands would appear here.
+	- If you are new to using a shell and decide to follow along with the exercises in a regular PowerShell terminal (as opposed to the console in the PowerShell ISE), then certain hotkeys/keyboard shortcuts are likely different than what you are used to.
+		- `ctrl + c`: Terminate process. Pressing this combination while a command is running will tell the computer to stop executing the command. This may be useful if you change your mind while running a time-consuming command, or if you accidentally run a command that runs forever.
+		- `right-click`: Copy/Paste. If you highlight some text in Powershell (left-click drag) and then right-click, then the highlighted text will be copied to your clipboard. And if you right-click in a Powershell terminal with nothing highlighted, then the text from your clipboard will be pasted into the command-line.
+	- Lastly, before we begin with the course material, here are some ways to help you help yourself if you are stuck. For the commands, we will learn about commands/cmdlets and how to fully use them in the next iteration; until then, copying the patterns of the following commands will be enough.
+		a. Get-Help:
+			- Get-Help -Name <command>
+
+		b. Get-Command:
+			- Get-Command -Name <command>
+		
+		c. Error messages:
+			- 
+
 
 II. Introduction
 
@@ -57,7 +70,7 @@ II. Introduction
 
 		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
 
-		0. Object
+		0. Objects
 		- Almost everything in PowerShell is an object. Objects are data entities that have properties (variables; describes characteristics of the object) and methods (functions; mechanism for interacting with the object). Many commands actually produce objects as their output.
 		- Let's look at an object. To do this, we will use a command that produces object-based output and assign it to a variable. In the console, enter `$myFolder = Get-ChildItem`.
 			- `Get-ChildItem` is a cmdlet (more on cmdlets in the next section) that gets the contents of a specified folder (the current working directory if path is unspecified) and outputs it to the console.
@@ -68,7 +81,7 @@ II. Introduction
 		i. Booleans, Integers, Doubles, Strings
 			- The following data types are very commonly used:
 
-				a. Boolean: 
+				a. Boolean: A boolean is a data type whose value is either true or false. We
 					
 				b. Integers: 
 
