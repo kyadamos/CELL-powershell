@@ -44,12 +44,14 @@ I. Setup
 	- If you are new to using a shell and decide to follow along with the exercises in a regular PowerShell terminal (as opposed to the console in the PowerShell ISE), then certain hotkeys/keyboard shortcuts are likely different than what you are used to.
 		- `ctrl + c`: Terminate process. Pressing this combination while a command is running will tell the computer to stop executing the command. This may be useful if you change your mind while running a time-consuming command, or if you accidentally run a command that runs forever.
 		- `right-click`: Copy/Paste. If you highlight some text in Powershell (left-click drag) and then right-click, then the highlighted text will be copied to your clipboard. And if you right-click in a Powershell terminal with nothing highlighted, then the text from your clipboard will be pasted into the command-line.
-	- Lastly, before we begin with the course material, here are some ways to help you help yourself if you are stuck. For the commands, we will learn about commands/cmdlets and how to fully use them in the next iteration; until then, copying the patterns of the following commands will be enough.
-		a. Get-Help:
-			- Get-Help -Name <command>
 
-		b. Get-Command:
-			- Get-Command -Name <command>
+## might move this part further up
+	- Lastly, before we begin with the course material, here are some ways to help you help yourself if you are stuck. For the commands, we will learn about commands/cmdlets and how to fully use them in the next iteration; until then, copying the patterns of the following commands will be enough.
+		a. Get-Command:
+			- `Get-Command` -Name <command>
+				`Get-Command` is a cmdlet to help you find commands that you are looking for. 
+		b. Get-Help:
+			- Get-Help -Name <command>
 		
 		c. Error messages:
 			- 
@@ -81,19 +83,25 @@ II. Introduction
 		i. Booleans, Integers, Doubles, Strings
 			- The following data types are very commonly used:
 
-				a. Boolean: A boolean is a data type whose value is either true or false. We
+				a. Boolean: A boolean is a data type whose value is either true or false. We will itneract with booleans most frequently when comparing values, e.g. "$a greater than $b? => true or false". Also, certain properties and methods produce boolean output if called or accessed.
 					
-				b. Integers: 
+					
+				b. Integers: Integers are whole numbers.
 
-				c. Double: 
+
+				c. Doubles: Doubles are decimals.
+
 
 				d. Strings: The string data type is essentially just text. We can create strings with either single or double quotes (' or "). Create a variable called `myString` and assign it to a string value:
-					Ex: $myString = "some text"
-					To verify that our variable `$myString` is of type [String], let's enter `$myString.GetType()` in our console.
-					
-					What if we have ; to do so, 
+					Ex: `$myString = "some text"`
+					- To verify that our variable `$myString` is of type [String], let's enter `$myString.GetType()` in our console.
+					- If we wanted to specify a filepath for a command, then we would pass that filepath as a string as well. For instance, in the line, `Get-ChildItem "C:\Users"`, we are telling PowerShell to output the contents of a directory. However, this time we have specified that we want the contents of the directory located at the path `"C:\Users"`, which we have passed as a string.
+					- What if we wanted part of the string to change depending on the value of some variable? For example, imagine we've written a script that gets the files and directories in our \Downloads directory, (which is by default located inside of our user folder) -- we know that it will contain a line similar to `Get-ChildItem "C:\Users\<your-username>\Downloads"`. However, if we shared this script with our coworkers, then the script would fail because it will be looking for your username in their PC. 
 
 		ii. Arrays, Hashtables
+
+
+		iii. Casting
 
 	C. Cmdlets
 		- Cmdlets are commands that can be sent to PowerShell to execute. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find a standard list of commands that comes with PowerShell here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
