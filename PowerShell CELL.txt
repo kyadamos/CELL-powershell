@@ -62,12 +62,20 @@ II. Introduction
 	A. Variables
 	- In PowerShell, variables are prefixed with a dollar sign $.
 		- Ex: `$some_variable`, `$input`, `$Folder5`
-	- Creating a variable and assigning a value to it is very simple:
-		- Ex: `$Number1 = 1`, `$Company = "ATT"`
-	- Each time that we start a new PowerShell session, PowerShell will automatically create and update a set of variables to store information about the session; these are called Automatic Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4). It's important to know about Automatic Variables because we should refrain from changing these values ourselves -- however, accessing these variables and their values and using them in our scripts is perfectly fine.
-		- Let's take a look at the variables in our session by entering the cmdlet `Get-Variable` into our console. Our output should have two columns: the variable names on the left, and their respective values on the right. Pick a few variables and access their values individually by inputting the variable into the console.
+	- Creating a variable and assigning a value to it is very simple -- we just set them equal to each other. To see their values, we can just enter them into the console.
+		- Ex: 
+			`$Number1 = 1`
+			`$Number1`
+
+			`$Company = "ATT"`
+			`$Company`
+	- To see all the variables in our session, we can send the command `Get-Variable`.
+	*There are some variables that PowerShell will automatically create and maintain called Automatic Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4); it's important to know about Automatic Variables because we should refrain from changing these values ourselves.
+		- There are a few ways to see  cmdlet `Get-Variable` into our console. Our output should have two columns: the variable names on the left, and their respective values on the right. Pick a few variables and access their values individually by inputting the variable into the console.
 			- Ex: `$HOME`, `$PWD` ("print working directory"), `$PSVersionTable`
-	
+	**We can also access and interact with Environment Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4#powershell-environment-variables), which are used to store data about the system environment (e.g. computer name, username, paths to certain file & directories)
+		- To see our Envrionment Variables, 
+
 	B. Data Types
 
 		In PowerShell, there are many different data types (https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.4). In this course, we'll go over the basic data types that you should know, which should be enough to use PowerShell practically.
@@ -80,11 +88,12 @@ II. Introduction
 			- As mentioned before, $myFolder is now an object that we can interact with, meaning we can get its properties and use methods on it. To access its properties or call (use) its methods, we use a dot after the object followed by the name of the property or method that we'd like to use. Let's run `$myFolder.gettype()` in the console, which calls the `GetType()` method of the object. The output tells us that our variable's type is Object[].
 				- Note the parentheses after `.GetType()`. This is how methods are written in PowerShell; properties do not have parentheses.
 		
+		
 		i. Booleans, Integers, Doubles, Strings
 			- The following data types are very commonly used:
 
 				a. Boolean: A boolean is a data type whose value is either true or false. We will itneract with booleans most frequently when comparing values, e.g. "$a greater than $b? => true or false". Also, certain properties and methods produce boolean output if called or accessed.
-					
+
 					
 				b. Integers: Integers are whole numbers.
 
@@ -96,7 +105,8 @@ II. Introduction
 					Ex: `$myString = "some text"`
 					- To verify that our variable `$myString` is of type [String], let's enter `$myString.GetType()` in our console.
 					- If we wanted to specify a filepath for a command, then we would pass that filepath as a string as well. For instance, in the line, `Get-ChildItem "C:\Users"`, we are telling PowerShell to output the contents of a directory. However, this time we have specified that we want the contents of the directory located at the path `"C:\Users"`, which we have passed as a string.
-					- What if we wanted part of the string to change depending on the value of some variable? For example, imagine we've written a script that gets the files and directories in our \Downloads directory, (which is by default located inside of our user folder) -- we know that it will contain a line similar to `Get-ChildItem "C:\Users\<your-username>\Downloads"`. However, if we shared this script with our coworkers, then the script would fail because it will be looking for your username in their PC. 
+					- What if we wanted part of the string to change depending on the value of some variable? For example, imagine we've written a script that gets the files and directories in our \Downloads directory, (which is by default located inside of our user folder) -- we know that it will contain a line similar to `Get-ChildItem "C:\Users\<your-username>\Downloads"`. However, if we shared this script with our coworkers, then the script would fail because it will be looking for your username in their PC.
+						- We can solve this problem by including a variable as part of the string. 
 
 		ii. Arrays, Hashtables
 
