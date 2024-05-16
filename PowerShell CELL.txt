@@ -69,12 +69,27 @@ II. Introduction
 
 			`$Company = "ATT"`
 			`$Company`
-	- To see all the variables in our session, we can send the command `Get-Variable`.
+
+	- There are a few different ways to see all the variables in our session; the simplest is by passing the cmdlet `Get-Variable`. We can also pass a variable name (without the $) in quotes along with the cmdlet to get the value of just that variable.
+		- Ex:
+			`Get-Variable`
+
+			`Get-Variable "Number1"`
+<#
+	- In a filepath "C:\Users\ka7462", the "C:\" indicates the drive that the subdirectories ".\Users\ka7462" are saved in. PowerShell organizes its data in a very similar way to a file system. Data is grouped according to their type and then stored in what is called a "provider" (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.4) -- for instance, there is a FileSystem provider to store files and directories, a Variable provider to store all PowerShell Variables, and a Function provider to store any Functions that we create in the current session. We can interact with a provider or its contents just like we interact with a file system drive:
+		- Ex:
+			`Get-Item we can just write : any PowerShell variables that you create are saved in the `Variables:\` provider, the Function provider (i.e. , Functions) calls them "providers" .  
+		- Ex:
+			`
+			
+#>
 	*There are some variables that PowerShell will automatically create and maintain called Automatic Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4); it's important to know about Automatic Variables because we should refrain from changing these values ourselves.
-		- There are a few ways to see  cmdlet `Get-Variable` into our console. Our output should have two columns: the variable names on the left, and their respective values on the right. Pick a few variables and access their values individually by inputting the variable into the console.
+		- There are a few ways to get the names and values of assigned variables in our shell. One way is by entering the cmdlet `Get-Variable` into our console. Our output should have two columns: the variable names on the left, and their respective values on the right. Select a few variables and access their values individually by inputting the variable into the console.
 			- Ex: `$HOME`, `$PWD` ("print working directory"), `$PSVersionTable`
-	**We can also access and interact with Environment Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4#powershell-environment-variables), which are used to store data about the system environment (e.g. computer name, username, paths to certain file & directories)
-		- To see our Envrionment Variables, 
+
+	**We can also access and interact with Environment Variables (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4#powershell-environment-variables), which are used to store data about the system environment (e.g. computer name, username, paths to certain files & directories, etc.).
+		- PowerShell considers Environment Variables different from PowerShell variables and therefore stores their data in separate providers (PowerShell data bins separated by type). `Get-Variable` only displays variables from the Variable provider `Variable:\`, while the Environment Variables are saved in the Environment provider `Env:\`.
+		- In order to display the Environment Variables, we can run the command 
 
 	B. Data Types
 
