@@ -11,7 +11,10 @@ I. Setup
 	A. Download & Installation
 	- get from Teams group files
 		- need admin privileges to install via MSI, request here: http://intranet.att.com/elrws/index.php
-	- if not compatible, get from https://software.it.att.com/
+	- if you are not using a Windows machine (Linux or macOS), then you must go to https://software.it.att.com/ and submit a request to download the package of PowerShell 7.4.2 that is compatible with your machine.
+		- For Linux users: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.4
+		- For macOS users: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.4
+			*Note: PowerShell 7 and newer versions require macOS 11 and higher. If you are using at least macOS version 10.12, then you may download and install PowerShell 6.x. To find out what your version of PowerShell supports/doesn't support, visit https://learn.microsoft.com/en-us/powershell/scripting/whats-new/cmdlet-versions?view=powershell-7.4
 
 	B. Environment
 	- PowerShell refers to both Windows' command-line shell program and the scripting language
@@ -28,9 +31,9 @@ I. Setup
 					- Can open a PowerShell terminal by pressing the Windows key and entering "Windows PowerShell"
 		- Scripting language: A scripting language is a class of programming languages; they are typically used to modify and/or automate tasks on a system.
 			- PowerShell scripts are essentially a set of commands written in a text file and saved with a ".ps1" extension.
-	- For the first couple of iterations, it will be very helpful to have a PowerShell terminal open on the side. This way, you can run the commands from the exercises and experiment with different inputs. For later iterations, we will also need to use a text editor, like Notepad or Notepad++, to create and edit our scripts.
-		- We will be using Windows PowerShell ISE (Integrated Scripting Environment) in this course, and we recommend that you do, too. Windows PowerShell ISE is simply a PowerShell terminal docked next to a text editor to allow for quick creating, editing, testing, and debugging of PowerShell scripts. It also comes with debugging tools and keyboard shortcuts to facilitate the scripting process. Finally, because it is made specifically for PowerShell, the interface is much simpler than other IDEs (Integrated Development Environment) and will let us focus on learning PowerShell.
-		- If you would like to use a different editor for any reason, that is completely okay (next best recommendation is Visual Studio Code). You can even write and edit your scripts in Notepad/Notepad++ and run them using a regular PowerShell terminal.
+	- To write and run our PowerShell scripts, we have a handful of options to choose from. At the bare minimum, we would need a text editor (e.g. Notepad, Notepad++, WordPad, etc.) to write and edit our scripts, and we would also need an installation of PowerShell to run our scripts from. However, 
+		We will be using Visual Studio Code in this course and recommend that you do, too. 
+		- If you  use a different editor for any reason, that is completely okay. You can even write and edit your scripts in 
 		- Let us begin by familiarizing ourselves with the PowerShell ISE.
 			- Console
 				- The console pane contains an instance of PowerShell, most likely running PowerShell version 5.1. Here, you can enter commands on the command-line and run them by pressing enter; any output will be displayed directly under your input after the command runs, and then a new command-line will appear underneath to receive your next input.
@@ -58,6 +61,9 @@ I. Setup
 
 
 II. Introduction
+
+	A. Commands
+		i. Commands are sent through the shell. They are usually in the form of <Verb>-<Noun>. 
 
 	A. Variables
 	- In PowerShell, variables are prefixed with a dollar sign $.
@@ -107,7 +113,8 @@ II. Introduction
 		i. Booleans, Integers, Doubles, Strings
 			- The following data types are very commonly used:
 
-				a. Boolean: A boolean is a data type whose value is either true or false. We will itneract with booleans most frequently when comparing values, e.g. "$a greater than $b? => true or false". Also, certain properties and methods produce boolean output if called or accessed.
+				a. Boolean: A boolean is a data type whose value is either true or false.
+					- We will interact with booleans most frequently when comparing values, e.g. the statement "$IntA -gt $IntB" states that some integer-type variable `$IntA` is greater than some other integer-type variable `$IntB`
 
 					
 				b. Integers: Integers are whole numbers.
@@ -121,12 +128,13 @@ II. Introduction
 					- To verify that our variable `$myString` is of type [String], let's enter `$myString.GetType()` in our console.
 					- If we wanted to specify a filepath for a command, then we would pass that filepath as a string as well. For instance, in the line, `Get-ChildItem "C:\Users"`, we are telling PowerShell to output the contents of a directory. However, this time we have specified that we want the contents of the directory located at the path `"C:\Users"`, which we have passed as a string.
 					- What if we wanted part of the string to change depending on the value of some variable? For example, imagine we've written a script that gets the files and directories in our \Downloads directory, (which is by default located inside of our user folder) -- we know that it will contain a line similar to `Get-ChildItem "C:\Users\<your-username>\Downloads"`. However, if we shared this script with our coworkers, then the script would fail because it will be looking for your username in their PC.
-						- We can solve this problem by including a variable as part of the string. 
+						- We can solve this problem by including a variable as part of the string.
 
 		ii. Arrays, Hashtables
-
+			- 
 
 		iii. Casting
+			- 
 
 	C. Cmdlets
 		- Cmdlets are commands that can be sent to PowerShell to execute. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find a standard list of commands that comes with PowerShell here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
