@@ -1,0 +1,54 @@
+I. Setup
+
+	A. Download & Installation
+	- get from Teams group files
+		- need admin privileges to install via MSI, request here: http://intranet.att.com/elrws/index.php
+	- if you are not using a Windows machine (Linux or macOS), then you must go to https://software.it.att.com/ and submit a request to download the package of PowerShell 7.4.2 that is compatible with your machine.
+		- For Linux users: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.4
+		- For macOS users: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.4
+			*Note: PowerShell 7 and newer versions require macOS 11 and higher. If you are using at least macOS version 10.12, then you may download and install PowerShell 6.x. To find out what your version of PowerShell supports/doesn't support, visit https://learn.microsoft.com/en-us/powershell/scripting/whats-new/cmdlet-versions?view=powershell-7.4
+
+	B. Environment
+	- PowerShell refers to both Windows' command-line shell program and the scripting language
+		- Command-line shell: A shell is a program that provides an interface between the user and computer.
+			- For example, we can use a shell to:
+				- Manipulate files and directories (directories = folders) create, delete, copy, move, edit, etc.*
+				- Start and stop processes and programs
+				- Manage our system's environment variables
+				- A combination of these and more to automate tasks
+			- Windows computers come with two default shell programs:
+				- Command Prompt: Older, basic/bare bones
+					- Can open by pressing Windows key and entering "cmd"
+				- PowerShell: Powerful, feature-rich, extensible
+					- Can open a PowerShell terminal by pressing the Windows key and entering "Windows PowerShell"
+		- Scripting language: A scripting language is a class of programming languages; they are typically used to modify and/or automate tasks on a system.
+			- PowerShell scripts are essentially a set of commands written in a text file and saved with a ".ps1" extension.
+	- To write and run our PowerShell scripts, we have a handful of options to choose from. At the bare minimum, we would need a text editor (e.g. Notepad, Notepad++, WordPad, etc.) to write and edit our scripts, and we would also need an installation of PowerShell to run our scripts from. However, 
+		We will be using Visual Studio Code in this course and recommend that you do, too. 
+		- If you  use a different editor for any reason, that is completely okay. You can even write and edit your scripts in 
+		- Let us begin by familiarizing ourselves with the PowerShell ISE.
+			- Console
+				- The console pane contains an instance of PowerShell, most likely running PowerShell version 5.1. Here, you can enter commands on the command-line and run them by pressing enter; any output will be displayed directly under your input after the command runs, and then a new command-line will appear underneath to receive your next input.
+				- You will probably see something like "PowerShell PS C:\Users\<your-attuid>>" on the left-hand side of the console; this is your "working directory" -- it indicates where your shell is performing actions from (where it's "working"). If you try to run a program or create files without specifying their file paths, then PowerShell will look for the program or create the file in your current working directory. By default, the working directory will be your user folder when opening a PowerShell terminal; if running as administrator, then the working directory will be C:\Windows\System32.
+					- We can change our working directory by using the `cd` command (change directory), followed by a path. For example, `cd "C:\Users\ka7462\OneDrive - AT&T Services, Inc"` will change my directory to my OneDrive folder.
+				- Another feature provided by the ISE is called Intellisense (Hotkey Ctrl+Space). Intellisense is a helpful tool that suggests commands and displays command information; for example, if you type "Get-" into the console and then press Ctrl+Space, you should see Intellisense's context window. You can use the arrow keys to navigate up and down the list to view different commands, and if you hover over a command, another popup should appear displaying the command parameters (which we will discuss in more detail in the next section).
+			- Script Pane
+				- This pane is essentially a text editor. We can write scripts and also use the ISE's debugging tools here.
+			- Commands Add-On
+				- This pane shows us all the commands available to the instance of PowerShell running in the ISE. If we were to add any additional commands through modules (which we will discuss later in iteration 5), then the module and its commands would appear here.
+	- If you are new to using a shell and decide to follow along with the exercises in a regular PowerShell terminal (as opposed to the console in the PowerShell ISE), then certain hotkeys/keyboard shortcuts are likely different than what you are used to.
+		- `ctrl + c`: Terminate process. Pressing this combination while a command is running will tell the computer to stop executing the command. This may be useful if you change your mind while running a time-consuming command, or if you accidentally run a command that runs forever.
+		- `right-click`: Copy/Paste. If you highlight some text in Powershell (left-click drag) and then right-click, then the highlighted text will be copied to your clipboard. And if you right-click in a Powershell terminal with nothing highlighted, then the text from your clipboard will be pasted into the command-line.
+
+## might move this part further up
+	- Lastly, before we begin with the course material, here are some ways to help you help yourself if you are stuck. For the commands, we will learn about commands/cmdlets and how to fully use them in the next iteration; until then, copying the patterns of the following commands will be enough.
+		a. Get-Command:
+			- `Get-Command` -Name <command>
+				`Get-Command` is a cmdlet to help you find commands that you are looking for. 
+		b. Get-Help:
+			- Get-Help -Name <command>
+		
+		c. Error messages:
+			- 
+
+
