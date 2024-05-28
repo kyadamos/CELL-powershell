@@ -1,9 +1,12 @@
-
-
 III. Control Flow
 
 	A. If
+        - It is very likely that we'll reach a point in our script where we would like to perform different actions depending on some condition(s). For example, pretend that we have two folders, FolderA and FolderB, and we have a text file "FileA.txt" that needs to be moved into the folder that shares the same letter suffix. In this example, we would want our code to move our text file into FolderA on the condition that our text file ends in "A", but move it into FolderB if it ends in "B".
+        - If statements can be written in PowerShell like this:
+            `if ( <condition> ) { <code to execute if condition is true> }`
+            - Ex: `if ()
 
 	B. For, While
+
 
 	C. Break, Continue, Return
