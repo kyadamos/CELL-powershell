@@ -10,7 +10,6 @@ I. Setup
 			*Note: PowerShell 7 and newer versions require macOS 11 and higher. If you are using at least macOS version 10.12, then you may download and install PowerShell 6.x. To find out what your version of PowerShell supports/doesn't support, visit https://learn.microsoft.com/en-us/powershell/scripting/whats-new/cmdlet-versions?view=powershell-7.4
 
 	B. Environment
-
 	- PowerShell refers to both Windows' command-line shell program and the scripting language
 		- Command-line shell: A shell is a program that provides an interface between the user and computer.
 			- For example, we can use a shell to:
@@ -27,17 +26,25 @@ I. Setup
 		- Scripting language: A scripting language is a class of programming languages; they are typically used to modify and/or automate tasks on a computer system.
 			- PowerShell scripts are essentially a set of commands written in a text file and saved with a ".ps1" extension.
 
-	- To write and run our PowerShell scripts, we have a handful of programs to choose from. At the bare minimum, we would need a text editor (e.g. Notepad, Notepad++, WordPad, etc.) to write and edit our scripts, and we would also need PowerShell to run our scripts or execute our one-liners. However, it's not 1990 anymore, so we have access to more sophisticated programs that will make it easier for us to develop our scripts.
-    - In this course, we will be using Visual Studio Code (VS Code) in this course and recommend that you do, too, as it has many features to facilitate our development experience. However, if you intend to use a different program for whatever reason, that is fine too.
-    - Let us begin by familiarizing ourselves with VS Code. VS Code's interface is split up into a few different panels, each with a specific purpose. We can use the Activity Bar, located along the left-hand side, to switch between some of these panels.
+	- To write and run our PowerShell scripts, we have a handful of programs to choose from. At the bare minimum, we would need a text editor like Notepad, Notepad++, WordPad, etc. to write and edit our scripts, and we would also need an installation of PowerShell (>v7.4.2) to run our scripts and one-liners. Thankfully it's not the 90s anymore, and now have access to more sophisticated programs to will make it easier for us to develop our scripts, called Integrated Development Environments (IDEs), 
+    	- In this course, we recommend using Visual Studio Code (VS Code) to write your scripts or execute your one-liners, as VS Code has many features to facilitate our development experience. You should still be able to complete the course if you decide to use a different IDE than VS Code -- assuming that your alternate editor is able to write and execute PowerShell commands and scripts. Just make sure that your editor's terminal is configured to use the correct version of PowerShell (from the Teams files), and then you can skip the rest of this iteration because it is about VS Code.
+	- Let's complete this iteration by familiarizing ourselves with VS Code's interface. It is mainly split up into 4 areas:
+
+		- Activity Bar:
+			By default, the Activity Bar is located along the left edge of our VS Code window and contains a few buttons representing 
+
+	    - Panel > Terminal:
+			First, let's find the panel named Panel. We can open the Panel by clicking on View > Appearance > Panel; it contains a few useful secondary tools and displays, but for this course we'll most likely only need the Terminal tab. The Terminal tab allows us to open a variety of different terminals -- PowerShell, bash, Command Prompt/CMD -- integrated right inside VS Code.
+			- Let us begin by setting PowerShell as our 
+
         - Editor:
             The Editor is the main area of VS Code that displays and lets us edit the contents of whatever file(s) that we have open. If there are multiple files open, then we can switch between them using their tabs at the top; if we would like to view two or more files at the same time, then we can even split the Editor by clicking on View > Editor Layout > Split ___.
 
         - Explorer: (Ctrl + Shift + E)
-            The Explorer can be displayed on the left by clicking on its icon in the Activity Bar, and it serves as VS Code's integrated File Explorer. The Explorer panel gives us a structured, top-level view of the files and folders that we open in VS Code, and it also allows us to create, delete, rename, and move files and folders around.
-
-        - Panel/Terminal:
-            We can open the Panel by clicking on View > Appearance > Panel; it contains a few useful secondary tools and displays, but for this course we'll most likely only need the Terminal tab. The Terminal tab allows us to open a variety of different terminals (PowerShell, bash, Command Prompt/CMD) integrated right inside VS Code.
+            The Explorer can be displayed on the left by clicking on its icon in the Activity Bar, and it serves as VS Code's integrated File Explorer. The Explorer panel gives us a structured, top-level view of the files and folders that we have open in VS Code, and it also allows us to create, delete, rename, and move files and folders around.
 
         - Extensions:
-            We can also open the Extensions panel from the Activity Bar, and it will appear on the left. VS Code offers a LOT of user-submitted extensions to further extend the capabilities of VS Code -- please be sure to install the PowerShell extension, as it will make our learning & development experience so much easier.
+			We can also click on the Extensions icon from the Activity Bar, and the Extensions panel will appear on the left. VS Code offers a LOT of user-submitted extensions to further extend the capabilities of VS Code. Please be sure to install the PowerShell extension, as it provides utilities that will make our learning & development experience so much easier, such as:
+			- Syntax highlighting: With the PowerShell extension installed and a PowerShell script open in the Editor (i.e. a file saved with a .ps1 extension), the PowerShell extension will color code the text within your script. For instance, all variables will be one color, cmdlets will be another color, brackets/parentheses will be a third color, and so on; this greatly improves readability 
+
+	- Lastly https://code.visualstudio.com/docs/getstarted/userinterface

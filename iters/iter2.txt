@@ -1,17 +1,21 @@
 II. Introduction
 
 	A. Cmdlets
-		- Cmdlets are simple commands that can be executed in PowerShell. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find a standard list of commands that comes with PowerShell here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
-		- We can try entering a cmdlet right now in the Terminal. Try entering the cmdlet `Get-ChildItem`, and then execute it by pressing Enter. Directly below the input we just gave, we should see the output: the contents of our user folder.
-		- Cmdlets typically have parameters that you can execute them with in order to customize your command. Let's try passing some parameters into the Get-ChildItem command. Type Get-ChildItem (or press the up arrow to copy the last command entered), and then press Ctrl+Space. After a couple seconds, you should see a context window appear with the parameters that Get-ChildItem accepts.
+		- Cmdlets are simple commands that can be executed in PowerShell. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find the default list of PowerShell cmdlets here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
+		- We can try entering a cmdlet right now in the Terminal. Try entering the cmdlet `Get-ChildItem`, and then run it by pressing Enter. Directly below the line containing our input, we should see the output of our cmdlet, i.e. the contents of our user folder.
+			- The `Get-ChildItem` cmdlet 
+		-  them with in order to customize your command. Let's try passing some parameters into the Get-ChildItem command. Type Get-ChildItem (or press the up arrow to copy the last command entered), and then press Ctrl+Space. After a couple seconds, you should see a context window appear with the parameters that Get-ChildItem accepts.
 			- The parameters are listed after the command. Each parameter is enclosed with square brackets []
 				- The first word is the parameter name, prefixed with a dash (-) and enclosed with another set of square brackets. The second word is the data type that the parameter accepts
 	
 		i. Simple Cmdlet
 		
+		
 		ii. Cmdlets with Parameters
 
+
 		iii. Pipeline
+		
 
 	B. Variables
 	- In PowerShell, variables are prefixed with a dollar sign $.
