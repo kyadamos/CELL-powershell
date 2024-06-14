@@ -6,7 +6,9 @@ III. Control Flow
             `if ( <condition> ) { <code to execute if condition is true> }`
             - Ex: `if ()
 
-	B. For, While
+	B. While, For
 
 
 	C. Break, Continue, Return
+
+IV. Pipeline

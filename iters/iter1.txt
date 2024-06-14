@@ -31,20 +31,23 @@ I. Setup
 	- Let's complete this iteration by familiarizing ourselves with VS Code's interface. It is mainly split up into 4 areas:
 
 		- Activity Bar:
-			By default, the Activity Bar is located along the left edge of our VS Code window and contains a few buttons representing 
+			By default, the Activity Bar is located along the left edge of our VS Code window and contains a few buttons representing different views to display on the Primary Side Bar -- the panel immediately to the right of the Activity Bar.
+			
+			- Extensions:
+				We can also click on the Extensions icon from the Activity Bar, and the Extensions panel will appear on the left. VS Code offers a LOT of user-submitted extensions to further extend the capabilities of VS Code. Please be sure to install the PowerShell extension, as it provides utilities that will make our learning & development experience so much easier, such as:
+					- Syntax highlighting: With the PowerShell extension installed and a PowerShell script open in the Editor (i.e. a file saved with a .ps1 extension), the PowerShell extension will color code the text within your script. For instance, all variables will be one color, cmdlets will be another color, brackets/parentheses will be a third color, and so on; this greatly improves readability and will make it easier to distinguish what is happening at different parts in a script.
+					- Intellisense: Intellisense is a feature in Visual Studio Code that is especially useful for people who are new to a programming language by suggesting commands, parameters, variables, etc. according to the context of our code. With the PowerShell extension, Intellisense will also display command syntax -- i.e. it will show us what parameters the command accepts, how to structure the command, etc. Once a language is specified to the IDE (whether by typing some code in that language or by saving the file with that language's extension), we can trigger Intellisense with `Ctrl + Space`.
+
+        	- Explorer: (Ctrl + Shift + E)
+            	The Explorer can be displayed on the left by clicking on its icon in the Activity Bar, and it serves as VS Code's integrated File Explorer. The Explorer panel gives us a structured, top-level view of the files and folders that we have open in VS Code, and it also allows us to create, delete, rename, and move files and folders around.
 
 	    - Panel > Terminal:
-			First, let's find the panel named Panel. We can open the Panel by clicking on View > Appearance > Panel; it contains a few useful secondary tools and displays, but for this course we'll most likely only need the Terminal tab. The Terminal tab allows us to open a variety of different terminals -- PowerShell, bash, Command Prompt/CMD -- integrated right inside VS Code.
+			We can open the Panel by clicking on View > Appearance > Panel; it contains a few useful secondary tools and displays, but for this course we'll most likely only need the Terminal tab. The Terminal tab allows us to open a variety of different terminals -- PowerShell, bash, Command Prompt/CMD -- integrated right inside VS Code.
 			- Let us begin by setting PowerShell as our 
 
         - Editor:
             The Editor is the main area of VS Code that displays and lets us edit the contents of whatever file(s) that we have open. If there are multiple files open, then we can switch between them using their tabs at the top; if we would like to view two or more files at the same time, then we can even split the Editor by clicking on View > Editor Layout > Split ___.
 
-        - Explorer: (Ctrl + Shift + E)
-            The Explorer can be displayed on the left by clicking on its icon in the Activity Bar, and it serves as VS Code's integrated File Explorer. The Explorer panel gives us a structured, top-level view of the files and folders that we have open in VS Code, and it also allows us to create, delete, rename, and move files and folders around.
-
-        - Extensions:
-			We can also click on the Extensions icon from the Activity Bar, and the Extensions panel will appear on the left. VS Code offers a LOT of user-submitted extensions to further extend the capabilities of VS Code. Please be sure to install the PowerShell extension, as it provides utilities that will make our learning & development experience so much easier, such as:
-			- Syntax highlighting: With the PowerShell extension installed and a PowerShell script open in the Editor (i.e. a file saved with a .ps1 extension), the PowerShell extension will color code the text within your script. For instance, all variables will be one color, cmdlets will be another color, brackets/parentheses will be a third color, and so on; this greatly improves readability 
+- As we mentioned before, PowerShell is a powerful automation scripting language with many applications/use cases (and therefore many different kinds of libraries, commands, etc.), but this course is designed to teach its audience how to write PowerShell scripts in order to automate repetitive *filesystem* tasks. In other words, the goal of this course is to get you to be able to write your own PowerShell scripts, and it aims to do this by introducing programming/scripting fundamentals in the context of manipulating files and folders.
 
 	- Lastly https://code.visualstudio.com/docs/getstarted/userinterface

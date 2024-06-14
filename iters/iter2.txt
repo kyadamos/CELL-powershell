@@ -1,18 +1,22 @@
 II. Introduction
 
 	A. Cmdlets
-		- Cmdlets are simple commands that can be executed in PowerShell. They follow a <verb>-<noun> naming convention, like "Get-ChildItem" or "Import-Csv". You can find the default list of PowerShell cmdlets here: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side. Commands are grouped by category)
-		- We can try entering a cmdlet right now in the Terminal. Try entering the cmdlet `Get-ChildItem`, and then run it by pressing Enter. Directly below the line containing our input, we should see the output of our cmdlet, i.e. the contents of our user folder.
-			- The `Get-ChildItem` cmdlet 
-		-  them with in order to customize your command. Let's try passing some parameters into the Get-ChildItem command. Type Get-ChildItem (or press the up arrow to copy the last command entered), and then press Ctrl+Space. After a couple seconds, you should see a context window appear with the parameters that Get-ChildItem accepts.
-			- The parameters are listed after the command. Each parameter is enclosed with square brackets []
-				- The first word is the parameter name, prefixed with a dash (-) and enclosed with another set of square brackets. The second word is the data type that the parameter accepts
+		- Preinstalled/default PowerShell commands are called "cmdlets"; they are generally small-sized commands that perform a specific action on a specific resource/entity/item (e.g. a folder, a file, a running process/application). All cmdlets follow PowerShell's <verb>-<noun> naming convention (e.g. "Get-ChildItem", "Write-Host"), in which the verb comes from a pre-approved list of carefully defined verbs (defined here: https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4).
+			-  We can also use the `Get-Verb` cmdlet to see the list of approved verbs and their definitions, and if we want to see all the commands, then we can use the `Get-Command` cmdlet. Try it out yourself:
+			Ex: `Get-Verb`
+			Ex: `Get-Command`
+			- We can also find all of PowerShell's cmdlets in the documentation: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side, grouped by category).
 	
 		i. Simple Cmdlet
-		
-		
-		ii. Cmdlets with Parameters
+			-  PowerShell terminal: open up PowerShell in your IDE, type `Get-ChildItem`, and then run it by pressing Enter.
+				- The `Get-ChildItem` cmdlet will display the contents of the current working directory; if you haven't changed your directory since opening up PowerShell, then that should be your user folder "C:\Users\<your-username>"+
+				- By the way, a good rule of thumb is: Never run a shell script/command if you don't know what it does. Make sure you read through each line and look up any commands that you are unfamiliar with -- even just one line could totally brick your system... or worse (e.g. compromise company data)
+				
 
+		ii. Cmdlets with Parameters
+			- What if we wanted to get the contents of a different folder, or what if we wanted to get othem with in order to customize your command.
+			- The parameters are listed after the command. Each parameter is enclosed with square brackets []
+				- The first word is the parameter name, prefixed with a dash (-) and enclosed with another set of square brackets. The second word is the data type that the parameter acceptsLet's try passing some parameters into the Get-ChildItem command. Type Get-ChildItem (or press the up arrow to copy the last command entered), and then press Ctrl+Space. After a couple seconds, you should see a context window appear with the parameters that Get-ChildItem accepts.
 
 		iii. Pipeline
 		
