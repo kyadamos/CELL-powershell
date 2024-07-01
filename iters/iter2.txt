@@ -1,13 +1,24 @@
 II. Introduction
 
 	A. Cmdlets
-		- Preinstalled/default PowerShell commands are called "cmdlets"; they are generally small-sized commands that perform a specific action on a specific resource/entity/item (e.g. a folder, a file, a running process/application). All cmdlets follow PowerShell's <verb>-<noun> naming convention (e.g. "Get-ChildItem", "Write-Host"), in which the verb comes from a pre-approved list of carefully defined verbs (defined here: https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4).
+		- Preinstalled/default PowerShell commands are called "cmdlets"; they are small-sized commands that perform a specific action on a specific resource*. Cmdlets follow the <verb>-<noun> naming convention, where:
+			- The <verb> comes from a list of predefined [verbs](https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4). This naming convention eliminates synonymous verbs from entering the command pool, which makes it much easier for us to find commands once we become a little bit more familiar with the possible verbs. For instance, if we are trying to delete a resource, then we can refer to the verb list and realize that the command we are looking for begins with `Remove` -- we don't have to waste time searching for commands that begin with `Delete`, `Eliminate`, or `Erase`.
+			- The <noun> is the resource that we are performing the action (our <verb>) on. For example, `Get-Verb` will retrieve all the predefined PowerShell verbs.
+				Ex: Execute the `Get-Verb` cmdlet by typing the command into PowerShell and then pressing Enter. We could also try out the code completion feature, Intellisense, by entering only the first few characters of the `Get-Verb` command, and then pressing `ctrl + space` to display Intellisense's predictions.
+				Ex: Try out the `Get-Help` cmdlet.
+		i. Parameters
+			- 
+
+					- Your output for the `Get-Help` command should be a sizeable text wall about how to use the `Get-Help` command.
 			-  We can also use the `Get-Verb` cmdlet to see the list of approved verbs and their definitions, and if we want to see all the commands, then we can use the `Get-Command` cmdlet. Try it out yourself:
 			Ex: `Get-Verb`
 			Ex: `Get-Command`
+
+			*In the context of PowerShell, "resource" is the abstracted term for any component/entity that can be managed with PowerShell. A folder, a file, a process/application, a virtual machine -- all of these could be considered a resource because we can perform actions on them using PowerShell
 			- We can also find all of PowerShell's cmdlets in the documentation: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.4 (Under "Reference" on the left-hand side, grouped by category).
+		 - All cmdlets follow PowerShell's <verb>-<noun> naming convention (e.g. "Get-ChildItem", "Write-Host"), in which the verb comes from a pre-approved list of carefully defined verbs (defined here: ).
 	
-		i. Simple Cmdlet
+
 			-  PowerShell terminal: open up PowerShell in your IDE, type `Get-ChildItem`, and then run it by pressing Enter.
 				- The `Get-ChildItem` cmdlet will display the contents of the current working directory; if you haven't changed your directory since opening up PowerShell, then that should be your user folder "C:\Users\<your-username>"+
 				- By the way, a good rule of thumb is: Never run a shell script/command if you don't know what it does. Make sure you read through each line and look up any commands that you are unfamiliar with -- even just one line could totally brick your system... or worse (e.g. compromise company data)
@@ -40,7 +51,7 @@ II. Introduction
 <#
 	- In a filepath "C:\Users\ka7462", the "C:\" indicates the drive that the subdirectories ".\Users\ka7462" are saved in. PowerShell organizes its data in a very similar way to a file system. Data is grouped according to their type and then stored in what is called a "provider" (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.4) -- for instance, there is a FileSystem provider to store files and directories, a Variable provider to store all PowerShell Variables, and a Function provider to store any Functions that we create in the current session. We can interact with a provider or its contents just like we interact with a file system drive:
 		- Ex:
-			`Get-Item we can just write : any PowerShell variables that you create are saved in the `Variables:\` provider, the Function provider (i.e. , Functions) calls them "providers" .  
+			`Get-Item` we can just write : any PowerShell variables that you create are saved in the `Variables:\` provider, the Function provider (i.e. , Functions) calls them "providers" .  
 		- Ex:
 			`
 			
